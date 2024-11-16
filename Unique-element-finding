@@ -1,0 +1,57 @@
+//it shows unique elements and shows unique array after remove
+import java.util.Scanner;
+
+public class NonDuplicatenum 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the size of the array: "); // Prompt user for the size of the array
+        int size = sc.nextInt(); // Size of the array
+
+        if (size <= 0)
+        {
+            System.out.println("Invalid array size!");
+            return;
+        }
+
+        int[] inputArray = new int[size]; // Create an array to take input from the user
+        System.out.println("Enter the elements of the array: ");
+        for (int i = 0; i < size; i++) 
+        {
+            inputArray[i] = sc.nextInt();
+        }
+
+        // Create a new array to store unique elements
+        int[] uniqueArray = new int[size];
+        int uniqueCount = 0; // Counter for unique elements
+
+        for (int i = 0; i < inputArray.length; i++)
+        {
+            boolean isUnique = true;
+
+            for (int j = 0; j < inputArray.length; j++) 
+            {
+                if (i != j && inputArray[i] == inputArray[j]) 
+                {
+                    isUnique = false; // Mark as not unique if a duplicate is found
+                    break;
+                }
+            }
+            
+            if (isUnique) 
+            {
+                System.out.println("unique element:" +inputArray[i]);// Print unique element
+                uniqueArray[uniqueCount++] = inputArray[i]; // Add unique element to the new array
+            }
+        }
+
+        // Print the modified array with unique elements
+        System.out.println("Array after removing duplicates: ");
+        for (int i = 0; i < uniqueCount; i++) 
+        {
+            System.out.print(uniqueArray[i] + " ");
+        }
+    }
+}
