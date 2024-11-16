@@ -1,0 +1,39 @@
+package practice;
+import java.util.Scanner;
+
+public class SwappingArray
+{ 
+	Scanner s=new Scanner(System.in);
+    public static void main(String[] args)
+    {
+      Scanner s=new Scanner(System.in);
+	  System.out.println("declare Array Size:");
+	  int size=s.nextInt();
+	  if(size>=0)
+	  {
+		  System.out.println("creating array:DONE");
+		  int[] SwappingArray=new int[size];
+		  System.out.println("Enter the Elements");
+		  for(int i=0;i<size;i++)
+		  {
+			  SwappingArray[i]=s.nextInt();
+		  
+		  }
+		   
+		  System.out.println("Swapping start");
+		  int temp;
+		  temp=SwappingArray[1];
+		  SwappingArray[1]=SwappingArray[2];
+		  SwappingArray[2]=temp;
+		  
+		  for(int i=0;i<size;i++)
+		  {
+		
+		  System.out.println(SwappingArray[i]);
+		  }
+	  }
+	 
+	  
+    }
+
+}
