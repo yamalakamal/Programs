@@ -1,0 +1,48 @@
+
+import java.util.Scanner;
+
+public class Swapping_AllElements_BackToFront
+{
+    public static void main(String[] args)
+    {
+        Scanner s = new Scanner(System.in);  // Initialize Scanner
+        System.out.println("Declare Array Size: ");
+        int size = s.nextInt();
+
+        // Ensure valid array size
+        if (size > 0)
+        {
+            System.out.println("Creating array: DONE");
+            int[] swappingArray = new int[size];
+
+            System.out.println("Enter the Elements:");
+            for (int i = 0; i < size; i++)
+            {
+                swappingArray[i] = s.nextInt();  // Fill array
+            }
+
+            System.out.println("Swapping Start");
+
+            // Swap all elements in reverse order
+            for (int i = 0; i < size/2 ; i++) 
+            {
+                int temp = swappingArray[i];
+                swappingArray[i] = swappingArray[size - i - 1];
+                swappingArray[size - i - 1] = temp;
+            }
+
+            // Print the swapped array
+            System.out.println("Array after swapping:");
+            for (int i = 0; i < size; i++)
+            {
+                System.out.print(swappingArray[i] + " ");
+            }
+
+            s.close();  // Close the scanner
+        } 
+        else 
+        {
+            System.out.println("Invalid size. Array size must be greater than 0.");
+        }
+    }
+}
