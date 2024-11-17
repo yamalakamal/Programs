@@ -1,0 +1,44 @@
+package practice;
+import java.util.Scanner;
+
+public class ChangingGiven_IndexNumEqualTo_LengthOfArray 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int count=0;
+        
+        System.out.println("Enter the size of the array: "); // Prompt user for the size of the array
+        int size = sc.nextInt(); // Size of the array
+
+        if (size <= 0)
+        {
+            System.out.println("Invalid array size!");
+            sc.close();
+            return;
+        }
+
+        int[] inputArray = new int[size]; // Create an array to take input from the user
+        System.out.println("Enter the elements of the array: ");
+        for (int i = 0; i < size; i++)
+        {
+            inputArray[i] = sc.nextInt();
+        }
+        
+        System.out.println("Enter input INDEX number to check its value: ");
+        int inputindex = sc.nextInt();
+        System.out.println("Value at index  " + inputindex +":"+ inputArray[inputindex]);
+	            int sub=1+inputArray.length-inputArray[inputindex];
+        		if(sub==inputArray[inputindex])
+                 {               	 
+                	 System.out.println("True");              	
+                 } 
+        		else
+        		{
+        			System.out.println("Flase");
+        		}
+      	
+        }
+       
+    
+}
