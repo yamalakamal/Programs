@@ -1,0 +1,43 @@
+package practice;
+import java.util.Scanner;
+public class FindingMaxiumElementIn_SpecificRANGE 
+{
+	static int max =0;
+ public static void main(String[] args)
+ {
+	 Scanner sc=new Scanner(System.in);
+	 
+	 System.out.println("Enter size of array:");
+	 int size = sc.nextInt();
+	 if(size<=0)
+	 {
+		 System.out.println("Invalid size");
+		 sc.close();
+	 }
+	  
+	 System.out.println("Enter Elements:");
+	 int[] inputArray=new int[size];
+	 for(int i=0;i<=size-1;i++)
+	 {
+	    inputArray[i] = sc.nextInt();
+	 }
+	 System.out.println("Finding maxium element in specific Element");
+	 System.out.println("Enter Starting Range:");
+	 int STRange=sc.nextInt();
+	 System.out.println("Enter Ending Range:");
+	 int ENRange=sc.nextInt();
+	 
+	      System.out.println("elements b/w inputs:");
+	      for(int i=STRange ;i<=ENRange;i++ )		 
+	     {
+		      System.out.println("elements index values:"+inputArray[i]);
+		      if(inputArray[i]>=max)
+		      {
+		    	 max=inputArray[i];
+		      }
+	      }
+	      System.out.println(":maximum value of index value: " +max);
+	     
+	 sc.close();
+ }
+}
