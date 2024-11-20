@@ -1,0 +1,61 @@
+package practice;
+import java.util.Scanner;
+public class DeferenceBetween_MaximumAndMinimumInArray 
+{	
+	
+	static int min ;
+		
+	 public static void main(String[] args)
+	 {
+		 Scanner sc=new Scanner(System.in);
+		 int max=0 ;
+		 int min=1 ;
+		 System.out.println("Enter size of array:");
+		 int size = sc.nextInt();
+		 if(size<=0)
+		 {
+			 System.out.println("Invalid size");
+			 sc.close();
+			 
+		 }
+		  
+		 System.out.println("Enter Elements:");
+		 int[] inputArray=new int[size];
+		 for(int i=0;i<=size-1;i++)
+		 {
+		    inputArray[i] = sc.nextInt();
+		 }
+		 
+		 System.out.println("Finding maxium element  Element");
+		 for(int i=0;i<=size-1;i++)
+		 {
+			 if(inputArray[i]>max )
+			 {
+				 max+=inputArray[i];
+				
+			 }
+		 }
+		 System.out.println(":maximum value  value: " +max);
+		 
+		 System.out.println("------------------------------");
+		 System.out.println("Finding min element  Element");
+		 for(int j=0;j<=size-1;j++)
+		 {
+			 if(inputArray[j]<min )
+			 {
+				 min+=inputArray[j];
+				 
+			 }
+			
+		 }	
+		 System.out.println(":minimum value  value: " +min);
+		// Calculate and print the difference
+			int difference = max - min;
+			System.out.println("------------------------------");
+			System.out.println("Difference between maximum and minimum: " + difference);
+			 
+		  
+		 sc.close();
+	 
+	}
+}
