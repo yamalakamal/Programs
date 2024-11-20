@@ -1,0 +1,48 @@
+package practice;
+import java.util.Scanner;
+public class RotateArrayby_N_Positions_RightTOLeft 
+{
+    public static void main(String[] args) 
+    {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Size of Array: ");
+        int size = s.nextInt();
+        if (size <= 0) 
+        {
+            System.out.println("Invalid Size");
+            s.close();
+            return;
+        }
+
+        System.out.println("Enter the elements into Array:");
+        int[] inputArray = new int[size];
+        for (int i = 0; i < size; i++)
+        {
+            inputArray[i] = s.nextInt();
+        }
+
+        System.out.println("Enter the number of positions to rotate (right to left): ");
+        int positions = s.nextInt();
+
+        // Normalize rotations if positions > size
+        positions = positions % size;
+
+        int[] newArray = new int[size];
+
+        // Perform rotation
+        for (int i = 0; i < size; i++)
+        {
+            int newIndex = (i + positions) % size; // Calculate new index for rotation
+            newArray[i] = inputArray[newIndex];
+        }
+
+        // Print rotated array
+        System.out.println("Rotated Array:");
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print(newArray[i] + " ");
+        }
+
+        s.close();
+    }
