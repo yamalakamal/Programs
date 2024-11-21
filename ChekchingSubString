@@ -1,0 +1,28 @@
+package String;
+import java.util.Scanner;
+public class ChekchingSubString
+	 {
+	    public static void main(String[] args)
+	    {
+	        Scanner scanner = new Scanner(System.in);
+
+	        System.out.println("Enter the main string:");
+	        String mainString = scanner.nextLine();
+
+	        System.out.println("Enter the substring to find:");
+	        String subString = scanner.nextLine();
+
+	        if (mainString.contains(subString)) 
+	        {
+	            System.out.println("The substring is found in the main string.");
+	        }
+	        else
+	        {
+	            System.out.println("The substring is NOT found in the main string.");
+	        }
+
+	        scanner.close();
+	    }
+	}
+
+
