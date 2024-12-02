@@ -1,0 +1,56 @@
+package String;
+/*
+import java.util.Scanner;
+public class FrequencyOfString
+{
+    public static void main(String[] args)
+    {
+        Scanner s = new Scanner(System.in);
+        
+        System.out.println("Enter the main string: "); // Input the main string
+        String input1 = s.nextLine();
+       
+        System.out.println("Enter the character you want to find the frequency of: ");// Input the character to count
+        char input2 = s.nextLine().charAt(0); // Read the first character of the input
+
+        int count = 0;
+        for (int i = 0; i < input1.length(); i++)
+        {
+            if (input1.charAt(i) == input2) 
+            { // Compare each character in the string
+                count++;
+            }
+        }
+        
+        System.out.println("The frequency of '" + input2 + "' is: " + count);
+        s.close();
+    }
+}
+*/
+import java.util.Scanner;
+public class FrequencyOfString 
+{
+    public static void main(String[] args) 
+    {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Enter the main string: ");
+        String input1 = s.nextLine();
+
+        System.out.println("Enter the substring frequency you want to find: ");
+        String input2 = s.nextLine();
+
+        int count = 0;
+        int index = input1.indexOf(input2); // Find the first occurrence
+
+        // Loop to find all occurrences of input2 in input1
+        while (index != -1) 
+        {
+            count++; // Increment the count
+            index = input1.indexOf(input2, index + input2.length()); // Move to the next occurrence
+        }
+
+        System.out.println("The frequency of '" + input2 + "' is: " + count);
+        s.close();
+    }
+}
